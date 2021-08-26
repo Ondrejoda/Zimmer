@@ -15,15 +15,14 @@ type Object* = ref object of RootObj
 proc newObject*(pos, size: Vec2, color: Color, z_index: int32, fill: bool): Object =
     ## Initiates a new Object object. 
     ## It takes in the object's position, size, color, z_index and fill arguments respectively.
-    var self = new Object
-    self.pos = pos
-    self.size = size
-    self.damping = 1.0
-    self.velocity = newVec2(0, 0)
-    self.color = color
-    self.z_index = z_index
-    self.fill = fill
-    return self
+    new result
+    result.pos = pos
+    result.size = size
+    result.damping = 1.0
+    result.velocity = newVec2(0, 0)
+    result.color = color
+    result.z_index = z_index
+    result.fill = fill
 
 proc apply_impulse*(self: Object, impulse:Vec2) =
     ## Applies impulse to the Object. Uses a Vec2 for the impulse. 

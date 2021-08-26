@@ -6,58 +6,50 @@ type Vec2* = ref object of RootObj
 
 proc newVec2*(x: SomeNumber, y: SomeNumber): Vec2 =
     ## Initiates a new Vec2 object. It takes in the vector's x and y coordinates.
-    var self = new Vec2
-    self.x = x.float
-    self.y = y.float
-    return self
+    result = Vec2(x: x.float, y: y.float)
+
+proc newVec2*(all: SomeNumber): Vec2 =
+    ## Initiates a new Vec2 object. It takes in the vector's x and y coordinates as one value.
+    result = Vec2(x: all.float, y: all.float)
 
 proc `+`(self:Vec2, to_add:Vec2): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x + to_add.x
-    newVec.y = self.y + to_add.y
-    return newVec
+    new result
+    result.x = self.x + to_add.x
+    result.y = self.y + to_add.y
 
 proc `-`(self:Vec2, to_sub:Vec2): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x - to_sub.x
-    newVec.y = self.y - to_sub.y
-    return newVec
+    new result
+    result.x = self.x - to_sub.x
+    result.y = self.y - to_sub.y
 
 proc `*`(self:Vec2, to_mul:Vec2): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x * to_mul.x
-    newVec.y = self.y * to_mul.y
-    return newVec
+    new result
+    result.x = self.x * to_mul.x
+    result.y = self.y * to_mul.y
 
 proc `/`(self:Vec2, to_div:Vec2): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x / to_div.x
-    newVec.y = self.y / to_div.y
-    return newVec
+    new result
+    result.x = self.x / to_div.x
+    result.y = self.y / to_div.y
 
 proc `+`(self:Vec2, to_add:SomeNumber): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x + to_add.float
-    newVec.y = self.y + to_add.float
-    return newVec
+    new result
+    result.x = self.x + to_add.float
+    result.y = self.y + to_add.float
 
 proc `-`(self:Vec2, to_sub:SomeNumber): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x - to_sub.float
-    newVec.y = self.y - to_sub.float
-    return newVec
+    new result
+    result.x = self.x - to_sub.float
+    result.y = self.y - to_sub.float
 
 proc `*`(self:Vec2, to_mul:SomeNumber): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x * to_mul.float
-    newVec.y = self.y * to_mul.float
-    return newVec
-
+    new result
+    result.x = self.x * to_mul.float
+    result.y = self.y * to_mul.float
 proc `/`(self:Vec2, to_div:SomeNumber): Vec2 =
-    var newVec = new Vec2
-    newVec.x = self.x / to_div.float
-    newVec.y = self.y / to_div.float
-    return newVec
+    new result
+    result.x = self.x / to_div.float
+    result.y = self.y / to_div.float
 
 proc `+=`(self:Vec2, to_add:Vec2) =
     self.x += to_add.x

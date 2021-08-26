@@ -98,7 +98,7 @@ function main() {
     title="Vec2 = ref object of RootObj
   x, y: float32">Vec2</a></li>
   <li><a class="reference" href="#Color"
-    title="Color = ref object of RootObj
+    title="Color = object of RootObj
   r, g, b, a: uint8">Color</a></li>
   <li><a class="reference" href="#Object"
     title="Object = ref object of RootObj
@@ -146,12 +146,12 @@ function main() {
 
   </ul>
   <ul class="simple nested-toc-section">newColor
-      <li><a class="reference" href="#newColor%2Cuint8%2Cuint8%2Cuint8%2Cuint8"
-    title="newColor(r: uint8; g: uint8; b: uint8; a: uint8): Color">newColor,<wbr>uint8,<wbr>uint8,<wbr>uint8,<wbr>uint8</a></li>
-  <li><a class="reference" href="#newColor%2Cuint8%2Cuint8"
-    title="newColor(all: uint8; a: uint8): Color">newColor,<wbr>uint8,<wbr>uint8</a></li>
-  <li><a class="reference" href="#newColor%2Cuint8"
-    title="newColor(all: uint8): Color">newColor,<wbr>uint8</a></li>
+      <li><a class="reference" href="#newColor%2CSomeNumber%2CSomeNumber%2CSomeNumber%2CSomeNumber"
+    title="newColor(r: SomeNumber; g: SomeNumber; b: SomeNumber; a: SomeNumber): Color">newColor,<wbr>SomeNumber,<wbr>SomeNumber,<wbr>SomeNumber,<wbr>SomeNumber</a></li>
+  <li><a class="reference" href="#newColor%2CSomeNumber%2CSomeNumber"
+    title="newColor(all: SomeNumber; a: SomeNumber): Color">newColor,<wbr>SomeNumber,<wbr>SomeNumber</a></li>
+  <li><a class="reference" href="#newColor%2CSomeNumber"
+    title="newColor(all: SomeNumber): Color">newColor,<wbr>SomeNumber</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">update_physics
@@ -247,7 +247,7 @@ This is Zimmer's implementation of Vector2.
 
 </dd>
 <a id="Color"></a>
-<dt><pre><a href="main.html#Color"><span class="Identifier">Color</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
+<dt><pre><a href="main.html#Color"><span class="Identifier">Color</span></a> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
   <span class="Identifier">r</span><span class="Other">,</span> <span class="Identifier">g</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">,</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">uint8</span>
 </pre></dt>
 <dd>
@@ -311,23 +311,22 @@ Initiates a new Vec2 object. It takes in the vector's x and y coordinates.
 Rotates the Vec2. It takes in a radian and rotates the Vec2 accordingly. This does not return a modified Vec2, it instead rotates the Vec2 passed in. If you want to pass in a degree instead of a radian, use d2r() accordingly.
 
 </dd>
-<a id="newColor,uint8,uint8,uint8,uint8"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newColor%2Cuint8%2Cuint8%2Cuint8%2Cuint8"><span class="Identifier">newColor</span></a><span class="Other">(</span><span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">;</span> <span class="Identifier">g</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">)</span><span class="Other">:</span> <a href="main.html#Color"><span class="Identifier">Color</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="newColor,SomeNumber,SomeNumber,SomeNumber,SomeNumber"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#newColor%2CSomeNumber%2CSomeNumber%2CSomeNumber%2CSomeNumber"><span class="Identifier">newColor</span></a><span class="Other">(</span><span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">;</span> <span class="Identifier">g</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">)</span><span class="Other">:</span> <a href="main.html#Color"><span class="Identifier">Color</span></a></pre></dt>
 <dd>
 
 Initiates a new Color object. It takes in the red, green, blue and alpha values.
 
 </dd>
-<a id="newColor,uint8,uint8"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newColor%2Cuint8%2Cuint8"><span class="Identifier">newColor</span></a><span class="Other">(</span><span class="Identifier">all</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">)</span><span class="Other">:</span> <a href="main.html#Color"><span class="Identifier">Color</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="newColor,SomeNumber,SomeNumber"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#newColor%2CSomeNumber%2CSomeNumber"><span class="Identifier">newColor</span></a><span class="Other">(</span><span class="Identifier">all</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">)</span><span class="Other">:</span> <a href="main.html#Color"><span class="Identifier">Color</span></a></pre></dt>
 <dd>
 
 Initiates a new Color object. It takes in red, green and blue as one value and alpha value seperately.
 
 </dd>
-<a id="newColor,uint8"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newColor%2Cuint8"><span class="Identifier">newColor</span></a><span class="Other">(</span><span class="Identifier">all</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">)</span><span class="Other">:</span> <a href="main.html#Color"><span class="Identifier">Color</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="newColor,SomeNumber"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#newColor%2CSomeNumber"><span class="Identifier">newColor</span></a><span class="Other">(</span><span class="Identifier">all</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">)</span><span class="Other">:</span> <a href="main.html#Color"><span class="Identifier">Color</span></a></pre></dt>
 <dd>
 
 Initiates a new Color object. It takes in red, green and blue as one value. Alpha defaults to 255.
@@ -464,7 +463,7 @@ Updates the positions in all of the objects in the current scene.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-08-25 20:04:42 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-08-26 06:41:38 UTC</small>
       </div>
     </div>
   </div>

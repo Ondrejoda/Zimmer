@@ -38,7 +38,6 @@ proc newEngine*(bgcolor: Color, window_size: Vec2, window_name: string): Engine 
     self.window_size = window_size
     self.mouse_pos = newVec2(0, 0)
     sdl2.init(sdl2.INIT_EVERYTHING)
-    sdl2.set
     self.window = createWindow(window_name, 0, 0, window_size.x.cint, window_size.y.cint, SDL_WINDOW_SHOWN)
     self.renderer = self.window.createRenderer(index = -1, flags = Renderer_PresentVsync)
     self.running = true
