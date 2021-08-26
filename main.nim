@@ -5,7 +5,7 @@ var engine = newEngine(newColor(0), newVec2(600, 600), "Window")
 
 var scene = newScene()
 
-var obj = newObject(newVec2(10, 10), newVec2(100, 100), newColor(255), 0, true)
+var obj = newObject(newVec2(10, 10), newVec2(100, 100), newColor(255), 1, true)
 obj.damping = 0.9
 scene.add_object(obj)
 

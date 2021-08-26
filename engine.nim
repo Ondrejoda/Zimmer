@@ -75,8 +75,17 @@ proc render*(self: Engine) =
     ## Renders all objects in the current scene. Doesn't need any arguments.
     self.renderer.setDrawColor(self.bgcolor.r, self.bgcolor.g, self.bgcolor.b, 255)
     self.renderer.clear()
+    var max_z = 0
+    var min_z = 0
     for obj in self.scene.objects:
-        self.render_object(obj)
+        if obj.z_index < min_z:
+            min_z = obj.z_index
+        if obj.z_index > max_z:
+            max_z = obj.z_index
+    for z_index in min_z..max_z:
+        for obj in self.scene.objects:
+            if obj.z_index == z_index:
+                self.render_object(obj)
     self.renderer.present()
 
 proc update_physics*(self: Engine) =
