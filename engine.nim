@@ -36,7 +36,9 @@ proc newEngine*(bgcolor: Color, window_size: Vec2, window_name: string): Engine 
     var self = new Engine
     self.bgcolor = bgcolor
     self.window_size = window_size
+    self.mouse_pos = newVec2(0, 0)
     sdl2.init(sdl2.INIT_EVERYTHING)
+    sdl2.set
     self.window = createWindow(window_name, 0, 0, window_size.x.cint, window_size.y.cint, SDL_WINDOW_SHOWN)
     self.renderer = self.window.createRenderer(index = -1, flags = Renderer_PresentVsync)
     self.running = true
@@ -53,9 +55,9 @@ proc handle_events*(self: Engine) =
     while pollEvent(event):
         if event.kind == QuitEvent:
             self.running = false;
-        # if event.kind == MouseMotion:
-        #     self.mouse_pos.x = event.motion.x.float
-        #     self.mouse_pos.y = event.motion.y.float
+        if event.kind == MouseMotion:
+            self.mouse_pos.x = event.motion.x.float
+            self.mouse_pos.y = event.motion.y.float
 
 proc set_scene*(self: Engine, scene: Scene) = 
     ## Sets current scene of the engine. This scene will be rendered if render() is called.
